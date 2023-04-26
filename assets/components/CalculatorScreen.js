@@ -11,7 +11,6 @@ const CalculatorScreen = ({ text }) => {
 const styles = StyleSheet.create({
   screen: {
     width: "80%",
-
     borderRadius: 15,
     paddingVertical: 14,
     paddingHorizontal: 10,
@@ -24,7 +23,7 @@ const styles = StyleSheet.create({
     textTransform: "uppercase",
     fontSize: 50,
     textAlign: "right",
-    color: "orange",
+    color: "#252525",
     backgroundColor: "#fff",
     padding: 0,
   },

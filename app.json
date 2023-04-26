@@ -1,13 +1,13 @@
 {
   "expo": {
-    "name": "calculadora",
-    "slug": "calculadora",
+    "name": "Calculadora",
+    "slug": "Calculadora",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon-calculator.png",
+    "icon": "./assets/images/myIcon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/images/splash-calculator.png",
+      "image": "./assets/images/mySplash.png",
       "resizeMode": "contain",
       "backgroundColor": "#252525"
     },
@@ -19,12 +19,12 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "foregroundImage": "./assets/images/myIcon.png",
         "backgroundColor": "#ffffff"
       }
     },
     "web": {
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/images/myIcon.png"
     }
   }
 }

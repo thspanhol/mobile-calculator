@@ -20,7 +20,11 @@ export default function App() {
     }
   };
 
-  const clear = () => setExpression("");
+  const clear = () => setExpression(expression.substring(0,expression.length -1));
+  const clearAll = () => {
+    setExpression("");
+    setHistory(["", "", ""]);
+  }
   const result = () => {
     if (
       expression.includes("÷") ||
@@ -45,7 +49,7 @@ export default function App() {
     <SafeAreaView style={styles.calculator}>
       <View style={styles.historyView}>
         {history.slice(-3).map((e) => (
-          <Text style={styles.historyText}>{e}</Text>
+          <Text style={styles.historyText} key={`HK-${e}-${Math.random()}`} >{e}</Text>
         ))}
       </View>
 
@@ -55,7 +59,7 @@ export default function App() {
         {array.map((e) => (
           <CalculatorBtn
             text={e}
-            key={e}
+            key={`BK-${e}`}
             onPress={e === "=" ? () => result() : () => funcAu(e)}
             disabled={
               ["÷", "×", "-", "+", ".", "="].includes(e) &&
@@ -66,9 +70,15 @@ export default function App() {
           />
         ))}
 
-        <TouchableOpacity onPress={() => clear()} style={styles.clearBox}>
+       <TouchableOpacity onPress={() => clear()} style={styles.clearBox}>
           <View style={styles.clearView}>
             <Text style={styles.clearText}>Clear</Text>
+          </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => clearAll()} style={styles.clearBox}>
+          <View style={styles.clearView}>
+            <Text style={styles.clearText}>Clear All</Text>
           </View>
         </TouchableOpacity>
       </View>
@@ -84,7 +94,7 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     width: "100%",
     height: "100%",
-    backgroundColor: "orange",
+    backgroundColor: "#252525",
     alignItems: "center",
     justifyContent: "center",
   },
@@ -103,10 +113,10 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     paddingVertical: 14,
     paddingHorizontal: 10,
-    backgroundColor: "#252525",
+    backgroundColor: "#FFDE59",
   },
   clearText: {
-    color: "white",
+    color: "#252525",
     fontWeight: "bold",
     textTransform: "uppercase",
     fontSize: 25,
@@ -114,6 +124,7 @@ const styles = StyleSheet.create({
   },
   historyView: {
     width: "100%",
+    height: 90,
     display: "flex",
     alignItems: "flex-end",
     paddingHorizontal: 10,
@@ -121,10 +132,6 @@ const styles = StyleSheet.create({
   historyText: {
     fontSize: 25,
     marginRight: 35,
-  },
-  historyLess: {
-    fontSize: 25,
-    marginRight: 35,
-    color: "orange",
+    color: "#fff",
   },
 });
