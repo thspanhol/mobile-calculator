@@ -20,11 +20,12 @@ export default function App() {
     }
   };
 
-  const clear = () => setExpression(expression.substring(0,expression.length -1));
+  const clear = () =>
+    setExpression(expression.substring(0, expression.length - 1));
   const clearAll = () => {
     setExpression("");
     setHistory(["", "", ""]);
-  }
+  };
   const result = () => {
     if (
       expression.includes("÷") ||
@@ -43,13 +44,15 @@ export default function App() {
     }
   };
 
-  const array = ["7","8","9","÷","4","5","6","×","1","2","3","-","0",".","=","+",];
+  const array = ["7","8","9","÷","4","5","6","×","1","2","3","-","0",".","=","+"];
 
   return (
     <SafeAreaView style={styles.calculator}>
       <View style={styles.historyView}>
         {history.slice(-3).map((e) => (
-          <Text style={styles.historyText} key={`HK-${e}-${Math.random()}`} >{e}</Text>
+          <Text style={styles.historyText} key={`HK-${e}-${Math.random()}`}>
+            {e}
+          </Text>
         ))}
       </View>
 
@@ -70,7 +73,7 @@ export default function App() {
           />
         ))}
 
-       <TouchableOpacity onPress={() => clear()} style={styles.clearBox}>
+        <TouchableOpacity onPress={() => clear()} style={styles.clearBox}>
           <View style={styles.clearView}>
             <Text style={styles.clearText}>Clear</Text>
           </View>
