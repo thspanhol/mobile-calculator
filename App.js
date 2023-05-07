@@ -55,9 +55,7 @@ export default function App() {
           </Text>
         ))}
       </View>
-
       <CalculatorScreen text={expression} />
-
       <View style={styles.options}>
         {array.map((e) => (
           <CalculatorBtn
@@ -72,13 +70,11 @@ export default function App() {
             }
           />
         ))}
-
         <TouchableOpacity onPress={() => clear()} style={styles.clearBox}>
           <View style={styles.clearView}>
             <Text style={styles.clearText}>Clear</Text>
           </View>
         </TouchableOpacity>
-
         <TouchableOpacity onPress={() => clearAll()} style={styles.clearBox}>
           <View style={styles.clearView}>
             <Text style={styles.clearText}>Clear All</Text>
